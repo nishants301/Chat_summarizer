@@ -13,7 +13,7 @@ This repository contains the implementation of a Chat API designed to handle rea
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/your-username/chat_api.git
+    git clone https://github.com/nshekhar301/chat_api.git
     ```
 2. Navigate to the project directory:
     ```bash
@@ -60,10 +60,3 @@ Contributions are welcome! Please follow these steps:
     ```
 5. Open a pull request.
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Contact
-
-For questions or support, please contact [your-email@example.com].
