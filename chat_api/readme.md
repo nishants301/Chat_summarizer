@@ -12,24 +12,16 @@ This repository contains the implementation of a Chat API designed to handle rea
 ## Installation
 
 1. Clone the repository:
-    ```bash
     git clone https://github.com/nshekhar301/chat_api.git
-    ```
 2. Navigate to the project directory:
-    ```bash
     cd chat_api
-    ```
 3. Install dependencies:
-    ```bash
     npm install
-    ```
 
 ## Usage
 
 1. Start the development server:
-    ```bash
     npm start
-    ```
 2. Access the API at `http://localhost:8000`.
 
 ## API Endpoints
@@ -41,22 +33,5 @@ This repository contains the implementation of a Chat API designed to handle rea
 | GET    | `/users`       | Fetch all users         |
 | POST   | `/users/login` | User login              |
 
-## Contributing
 
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository.
-2. Create a new branch:
-    ```bash
-    git checkout -b feature-name
-    ```
-3. Commit your changes:
-    ```bash
-    git commit -m "Add feature-name"
-    ```
-4. Push to your branch:
-    ```bash
-    git push origin feature-name
-    ```
-5. Open a pull request.
 
