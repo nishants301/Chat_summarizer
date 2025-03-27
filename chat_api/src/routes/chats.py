@@ -1,4 +1,3 @@
-# app/routes/chats.py
 from fastapi import APIRouter, HTTPException, Depends
 from pydantic import BaseModel
 from typing import List, Optional
@@ -8,7 +7,6 @@ from src.models.chat import ChatMessage
 
 router = APIRouter()
 
-# Create a new chat message
 @router.post("/chats", status_code=201)
 async def create_chat(chat_message: ChatMessage):
     db = get_db()
@@ -25,7 +23,6 @@ async def create_chat(chat_message: ChatMessage):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error inserting chat message: {str(e)}")
 
-# Retrieve a conversation by ID (optional conversation_id as query parameter)
 @router.get("/chats/")
 async def get_conversation(conversation_id: Optional[str] = None):
     db = get_db()
@@ -43,7 +40,6 @@ async def get_conversation(conversation_id: Optional[str] = None):
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error retrieving conversation: {str(e)}")
 
-# Summarize a conversation (placeholder for LLM integration)
 @router.post("/chats/summarize")
 async def summarize_conversation(conversation_id: Optional[str] = None):
     db = get_db()
@@ -58,14 +54,12 @@ async def summarize_conversation(conversation_id: Optional[str] = None):
         if not messages:
             raise HTTPException(status_code=404, detail="Conversation not found")
         
-        # Placeholder for LLM summarization logic
         summary = "This is a placeholder summary for the conversation."
         
         return {"summary": summary}
     except Exception as e:
         raise HTTPException(status_code=500, detail=f"Error summarizing conversation: {str(e)}")
 
-# Get user's chat history with pagination
 @router.get("/users/{user_id}/chats")
 async def get_user_chats(user_id: str, page: int = 1, limit: int = 10):
     db = get_db()
@@ -77,7 +71,6 @@ async def get_user_chats(user_id: str, page: int = 1, limit: int = 10):
     try:
         chats = list(db.find({"user_id": user_id}).skip(skip).limit(limit))
         
-        # Add metadata for pagination
         total_count = db.count_documents({"user_id": user_id})
         
         return {
